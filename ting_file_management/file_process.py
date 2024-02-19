@@ -28,7 +28,15 @@ def process(path_file, instance: Queue):
 
 
 def remove(instance: Queue):
-    """Aqui irá sua implementação"""
+    # Verifica se a fila está vazia.
+    if instance.__len__() == 0:
+        return print("Não há elementos")
+
+    # Remove o primeiro arquivo da fila.
+    file_removed = instance.dequeue()
+
+    # Mostra a mensagem de sucesso.
+    print(f"Arquivo {file_removed['nome_do_arquivo']} removido com sucesso")
 
 
 def file_metadata(instance: Queue, position):
